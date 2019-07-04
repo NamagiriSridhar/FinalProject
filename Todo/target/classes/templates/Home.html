@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="/fragments/styling :: head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="/fragments/styling :: jumbotron"></div>
+		<span class="badge">
+			<h1>Choose one</h1>
+			<h5><a th:href="@{/create}" id="create">1.Create Todo Item</a></h5>
+			<h5><a th:href="@{/view}" id="view">2.View all Todo Items</a></h5>
+		</span>
+		<div th:replace="/fragments/styling :: body-links"></div>			
+	</body>
+</html>

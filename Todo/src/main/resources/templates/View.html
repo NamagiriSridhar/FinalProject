@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="/fragments/styling :: head-style">
+</head>
+<body class="m-5">
+	<div th:replace="/fragments/styling :: jumbotron"></div>
+	<a th:href="@{/}">Go home</a>
+	<h3>View all Todo items</h3>
+	<div class="row">
+		<div th:each="todo: ${todos}">
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title" th:text="${todo.title}"></h5>
+						<p class="card-text" th:text="${todo.description}"></p>
+						<p class="card-text" th:text="${todo.status}"></p>
+						<a th:href="@{'/update/{id}' (id=${todo.id})}" id="update"
+							class="btn btn-primary">update</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="/fragments/styling :: body-links"></div>
+</body>
+</html>
+
+
